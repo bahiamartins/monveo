@@ -158,7 +158,7 @@ Resposta:
 
 1. Crie um bucket no [Google Cloud Console](https://console.cloud.google.com/storage):
    ```bash
-   gsutil mb -p jobconvo-automl -l us-central1 gs://monveo-seo-images
+   gsutil mb -p [PROJECT_ID] -l us-central1 gs://monveo-seo-images
    gsutil iam ch allUsers:objectViewer gs://monveo-seo-images
    ```
 2. Garanta que a service account tem o papel **Storage Object Admin** no bucket.
