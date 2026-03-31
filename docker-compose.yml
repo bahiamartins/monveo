@@ -1,0 +1,29 @@
+services:
+  backend:
+    build:
+      context: ./backend
+    environment:
+      - GOOGLE_APPLICATION_CREDENTIALS=/secrets/google_auth.json
+      - GCS_BUCKET=monveo-seo-images
+    volumes:
+      # Caminho no host: defina MONVEO_GOOGLE_APPLICATION_CREDENTIALS se o JSON estiver fora do repo
+      - ${MONVEO_GOOGLE_APPLICATION_CREDENTIALS:-./backend/google_auth.json}:/secrets/google_auth.json:ro
+    expose:
+      - "5000"
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import urllib.request; urllib.request.urlopen('http://localhost:5000/api/sessions')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
+
+  frontend:
+    build:
+      context: ./frontend
+    ports:
+      - "80:80"
+    depends_on:
+      backend:
+        condition: service_healthy
+    restart: unless-stopped

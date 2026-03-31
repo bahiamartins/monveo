@@ -1,0 +1,14 @@
+google-api-core
+google-cloud-core
+google-cloud-aiplatform
+Flask
+flask-cors
+# depending on package name, you might need one of the following:
+# google-genai or google-cloud-genai
+google-genai
+
+google-cloud-firestore
+google-cloud-storage
+pypdf
+python-docx
+openpyxl

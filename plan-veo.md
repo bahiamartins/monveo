@@ -1,0 +1,11 @@
+- criar um aplicativo de chat inteligente focado em SEO ja utilizando o backend da pasta monveo
+- criar o frontend em react para:
+    - enviar textos, considerando html
+    - salvar historico de conversas
+    - sidebar com titulo das conversas, podendo editar os titulos
+    - ao carregar um historico de conversa, carregar as 15 ultimas pergutnas e respostas
+    - todas as respostas devem vir em formatação para poder colar em word ou wordpress
+- criar um novo backend para geração de infograficos para enriquecer os conteúdos gerados pelo SEO:
+    - sempre que o usuario solicitar gerar alguma imagem, o agente principal deverá acionar o agente gráfico
+    - a imagem deve ser armazenada no google storage e pode ser baixada pela usuario
+    - as imagens não podem ter a marca do gemini
