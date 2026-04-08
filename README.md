@@ -85,6 +85,8 @@ source .venv/bin/activate        # macOS/Linux
 pip install -r requirements.txt
 
 GOOGLE_APPLICATION_CREDENTIALS=google_auth.json python app.py
+
+flask run
 ```
 
 Backend disponível em: http://localhost:5000
